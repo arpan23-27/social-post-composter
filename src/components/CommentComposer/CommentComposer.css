@@ -1,72 +1,188 @@
-/* src/components/CommentComposer/CommentComposer.css */
+/* ==========================================================================
+   CommentComposer.css
+   Layout styles for the Comment Composer feature
+   ========================================================================== */
+
+/* ==========================================================================
+   Comment Composer (Card)
+   ========================================================================== */
+
+.comment-composer {
+  width: min(100%, 37.5rem); /* 600px */
+  margin: 2rem auto;
+  padding: 1.25rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  background-color: var(--color-surface, #ffffff);
+  border: 1px solid var(--color-border, #dcdcdc);
+  border-radius: var(--radius-lg, 0.75rem);
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.08);
+}
+
+/* ==========================================================================
+   Body
+   ========================================================================== */
+
+.composer-body {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+.composer-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+/* ==========================================================================
+   Avatar
+   ========================================================================== */
 
 .avatar {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%; /* makes it circular */
-  background-color: var(--primary-color, #4f46e5);
+  flex-shrink: 0;
+
+  width: 2.5rem;
+  height: 2.5rem;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
-  font-weight: bold;
+
+  border-radius: 50%;
+
+  background-color: var(--color-primary, #4f46e5);
+  color: #ffffff;
+
   font-size: 0.875rem;
+  font-weight: 600;
 }
 
+/* ==========================================================================
+   TextArea
+   ========================================================================== */
 
+.composer-textarea {
+  flex: 1;
+}
 
 .composer-textarea textarea {
   width: 100%;
-  resize: none; /* prevent manual resizing */
-  padding: var(--spacing-md, 12px);
-  border: 1px solid #ddd;
-  border-radius: var(--radius-md, 8px);
-  font-size: 0.875rem;
-  font-family: inherit;
+  min-height: 6rem;
+
+  padding: 0.75rem;
+
+  resize: none;
+
+  border: 1px solid var(--color-border, #dcdcdc);
+  border-radius: var(--radius-md, 0.5rem);
+
+  background-color: transparent;
+
+  font: inherit;
+  line-height: 1.5;
 }
 
 .composer-textarea textarea:focus {
   outline: none;
-  border-color: var(--primary-color, #4f46e5);
-  box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.2);
+  border-color: var(--color-primary, #4f46e5);
+  box-shadow: 0 0 0 0.1875rem rgba(79, 70, 229, 0.15);
 }
 
-
-
-button {
-  background-color: #4CAF50;
-  color: white;
-  padding: 10px 20px;
-  margin: 10px 0;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.3s ease;
-}
-
-button:hover {
-  background-color: #45a049;
-}
-
-h1 {
-  font-size: 20px;
-  color: #333;
-  margin-top: 15px;
-  font-family: Arial, sans-serif;
-  text-align: center;
-}
-
-
-
-/* CommentComposer.css */
+/* ==========================================================================
+   Character Counter
+   ========================================================================== */
 
 .character-counter {
-  font-size: 14px;
-  color: #555;
-  margin-top: 8px;
-  font-family: Arial, sans-serif;
-  text-align: right; /* aligns counter to the right */
+  margin: 0;
+
+  color: var(--color-text-secondary, #6b7280);
+
+  font-size: 0.875rem;
 }
 
+/* ==========================================================================
+   Submit Button
+   ========================================================================== */
 
+.composer-submit-button {
+  padding: 0.625rem 1.25rem;
+
+  border: none;
+  border-radius: var(--radius-md, 0.5rem);
+
+  background-color: var(--color-primary, #4f46e5);
+  color: #ffffff;
+
+  font: inherit;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.composer-submit-button:hover {
+  background-color: var(--color-primary-hover, #4338ca);
+}
+
+.composer-submit-button:active {
+  transform: scale(0.98);
+}
+
+.composer-submit-button:focus-visible {
+  outline: 2px solid var(--color-primary, #4f46e5);
+  outline-offset: 2px;
+}
+
+/* ==========================================================================
+   Accessibility
+   ========================================================================== */
+
+.sr-only {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+
+  padding: 0;
+  margin: -1px;
+
+  overflow: hidden;
+
+  white-space: nowrap;
+
+  clip: rect(0, 0, 0, 0);
+
+  border: 0;
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+
+@media (max-width: 480px) {
+  .comment-composer {
+    margin: 1rem;
+    padding: 1rem;
+  }
+
+  .composer-footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .composer-submit-button {
+    width: 100%;
+  }
+}

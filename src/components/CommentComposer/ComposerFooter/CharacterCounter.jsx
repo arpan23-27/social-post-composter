@@ -1,9 +1,9 @@
-export default function CharacterCounter(){
+export default function CharacterCounter({text, maxCharacters }){
+    const  remainingCharacters  = maxCharacters - text.length;
     return (
-        <>
-        <p className="character-counter">
-    280 characters remaining
-</p>
-        </>
+        <span 
+           className="character-counter">
+            {remainingCharacters} characters remaining
+        </span>
     )
 }

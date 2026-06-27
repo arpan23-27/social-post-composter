@@ -1,46 +1,44 @@
 /* ==========================================================================
-   CommentComposer.css
-   Layout styles for the Comment Composer feature
-   ========================================================================== */
-
-/* ==========================================================================
-   Comment Composer (Card)
+   Comment Composer
    ========================================================================== */
 
 .comment-composer {
-  width: min(100%, 37.5rem); /* 600px */
-  margin: 2rem auto;
-  padding: 1.25rem;
+  width: min(100%, 37.5rem);
+
+  margin: var(--spacing-2xl) auto;
+  padding: var(--spacing-xl);
 
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: var(--spacing-lg);
 
-  background-color: var(--color-surface, #ffffff);
-  border: 1px solid var(--color-border, #dcdcdc);
-  border-radius: var(--radius-lg, 0.75rem);
-  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.08);
+  background: var(--color-surface);
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+
+  box-shadow: var(--shadow-sm);
 }
 
 /* ==========================================================================
-   Body
+   Composer Body
    ========================================================================== */
 
 .composer-body {
   display: flex;
   align-items: flex-start;
-  gap: 1rem;
+  gap: var(--spacing-lg);
 }
 
 /* ==========================================================================
-   Footer
+   Composer Footer
    ========================================================================== */
 
 .composer-footer {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  gap: 1rem;
+  align-items: center;
+  gap: var(--spacing-lg);
 }
 
 /* ==========================================================================
@@ -54,20 +52,20 @@
   height: 2.5rem;
 
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 
   border-radius: 50%;
 
-  background-color: var(--color-primary, #4f46e5);
-  color: #ffffff;
+  background: var(--color-primary);
+  color: white;
 
-  font-size: 0.875rem;
-  font-weight: 600;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
 }
 
 /* ==========================================================================
-   TextArea
+   Text Area
    ========================================================================== */
 
 .composer-textarea {
@@ -78,23 +76,29 @@
   width: 100%;
   min-height: 6rem;
 
-  padding: 0.75rem;
+  padding: var(--spacing-md);
 
   resize: none;
 
-  border: 1px solid var(--color-border, #dcdcdc);
-  border-radius: var(--radius-md, 0.5rem);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
 
-  background-color: transparent;
+  background: transparent;
 
   font: inherit;
   line-height: 1.5;
+
+  transition:
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast);
 }
 
 .composer-textarea textarea:focus {
   outline: none;
-  border-color: var(--color-primary, #4f46e5);
-  box-shadow: 0 0 0 0.1875rem rgba(79, 70, 229, 0.15);
+
+  border-color: var(--color-primary);
+
+  box-shadow: 0 0 0 0.1875rem var(--color-focus-ring);
 }
 
 /* ==========================================================================
@@ -102,11 +106,9 @@
    ========================================================================== */
 
 .character-counter {
-  margin: 0;
+  color: var(--color-text-secondary);
 
-  color: var(--color-text-secondary, #6b7280);
-
-  font-size: 0.875rem;
+  font-size: var(--font-size-sm);
 }
 
 /* ==========================================================================
@@ -117,23 +119,22 @@
   padding: 0.625rem 1.25rem;
 
   border: none;
-  border-radius: var(--radius-md, 0.5rem);
+  border-radius: var(--radius-md);
 
-  background-color: var(--color-primary, #4f46e5);
-  color: #ffffff;
+  background: var(--color-primary);
+  color: white;
 
-  font: inherit;
-  font-weight: 600;
+  font-weight: var(--font-weight-semibold);
 
   cursor: pointer;
 
   transition:
-    background-color 0.2s ease,
-    transform 0.2s ease;
+    background-color var(--transition-fast),
+    transform var(--transition-fast);
 }
 
 .composer-submit-button:hover {
-  background-color: var(--color-primary-hover, #4338ca);
+  background: var(--color-primary-hover);
 }
 
 .composer-submit-button:active {
@@ -141,30 +142,8 @@
 }
 
 .composer-submit-button:focus-visible {
-  outline: 2px solid var(--color-primary, #4f46e5);
+  outline: 2px solid var(--color-primary);
   outline-offset: 2px;
-}
-
-/* ==========================================================================
-   Accessibility
-   ========================================================================== */
-
-.sr-only {
-  position: absolute;
-
-  width: 1px;
-  height: 1px;
-
-  padding: 0;
-  margin: -1px;
-
-  overflow: hidden;
-
-  white-space: nowrap;
-
-  clip: rect(0, 0, 0, 0);
-
-  border: 0;
 }
 
 /* ==========================================================================
@@ -173,8 +152,8 @@
 
 @media (max-width: 480px) {
   .comment-composer {
-    margin: 1rem;
-    padding: 1rem;
+    margin: var(--spacing-lg);
+    padding: var(--spacing-lg);
   }
 
   .composer-footer {

@@ -1,7 +1,8 @@
-export default function SubmitButton() {
-     return(
+export default function SubmitButton({disabled}) {
+     
+   return(
         <>
-        <button type="submit">
+        <button type ="submit" className="composer-submit-button" disabled={disabled}>
         Reply
         </button>
         </>

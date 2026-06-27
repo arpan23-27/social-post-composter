@@ -20,12 +20,23 @@ export default function CommentComposer(){
     }
 
 
+
+    function handleSubmit(){
+        event.preventDefault();
+
+        if(isSubmitDisabled)return;
+        console.log("Submitted", text);
+
+        setText("");
+    }
     const isSubmitDisabled = 
-    text.trim() === "" || text.length > MAX_CHARACTERS;
+    text.trim() === "" || 
+    text.length > MAX_CHARACTERS;
    
     return(
         <form 
-            className="comment-composer" >
+            className="comment-composer"
+            onSubmit={handleSubmit} >
             <div className="composer-body">
                 <Avatar/>
                 

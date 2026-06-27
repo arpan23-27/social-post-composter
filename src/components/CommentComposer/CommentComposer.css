@@ -1,0 +1,167 @@
+/* ==========================================================================
+   Comment Composer
+   ========================================================================== */
+
+.comment-composer {
+  width: min(100%, 37.5rem);
+
+  margin: var(--spacing-2xl) auto;
+  padding: var(--spacing-xl);
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+
+  background: var(--color-surface);
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+
+  box-shadow: var(--shadow-sm);
+}
+
+/* ==========================================================================
+   Composer Body
+   ========================================================================== */
+
+.composer-body {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-lg);
+}
+
+/* ==========================================================================
+   Composer Footer
+   ========================================================================== */
+
+.composer-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--spacing-lg);
+}
+
+/* ==========================================================================
+   Avatar
+   ========================================================================== */
+
+.avatar {
+  flex-shrink: 0;
+
+  width: 2.5rem;
+  height: 2.5rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 50%;
+
+  background: var(--color-primary);
+  color: white;
+
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+}
+
+/* ==========================================================================
+   Text Area
+   ========================================================================== */
+
+.composer-textarea {
+  flex: 1;
+}
+
+.composer-textarea textarea {
+  width: 100%;
+  min-height: 6rem;
+
+  padding: var(--spacing-md);
+
+  resize: none;
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+
+  background: transparent;
+
+  font: inherit;
+  line-height: 1.5;
+
+  transition:
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.composer-textarea textarea:focus {
+  outline: none;
+
+  border-color: var(--color-primary);
+
+  box-shadow: 0 0 0 0.1875rem var(--color-focus-ring);
+}
+
+/* ==========================================================================
+   Character Counter
+   ========================================================================== */
+
+.character-counter {
+  color: var(--color-text-secondary);
+
+  font-size: var(--font-size-sm);
+}
+
+/* ==========================================================================
+   Submit Button
+   ========================================================================== */
+
+.composer-submit-button {
+  padding: 0.625rem 1.25rem;
+
+  border: none;
+  border-radius: var(--radius-md);
+
+  background: var(--color-primary);
+  color: white;
+
+  font-weight: var(--font-weight-semibold);
+
+  cursor: pointer;
+
+  transition:
+    background-color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.composer-submit-button:hover {
+  background: var(--color-primary-hover);
+}
+
+.composer-submit-button:active {
+  transform: scale(0.98);
+}
+
+.composer-submit-button:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+
+@media (max-width: 480px) {
+  .comment-composer {
+    margin: var(--spacing-lg);
+    padding: var(--spacing-lg);
+  }
+
+  .composer-footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .composer-submit-button {
+    width: 100%;
+  }
+}

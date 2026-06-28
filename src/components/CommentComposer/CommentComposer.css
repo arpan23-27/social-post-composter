@@ -165,3 +165,24 @@
     width: 100%;
   }
 }
+
+
+/*============================================================*/
+.character-counter {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  transition: color 0.2s ease;
+}
+
+.character-counter.warning {
+  color: #f59e0b;
+}
+
+.character-counter.error {
+  color: #dc2626;
+}
+
+.composer-submit-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
